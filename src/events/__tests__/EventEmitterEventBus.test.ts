@@ -42,11 +42,28 @@ describe('EventEmitterEventBus', () => {
       expect(handler).toHaveBeenCalledWith(expectedSecondEvent);
     });
 
+    test('should call all subscribers', async () => {
+      // Arrange
+      const eventBus = new EventEmitterEventBus();
+      const expectedAlphaEvent = new TestAlphaEvent();
+
+      const handler1 = jest.fn();
+      const handler2 = jest.fn();
+      eventBus.subscribe(TestAlphaEvent, handler1);
+      eventBus.subscribe(TestAlphaEvent, handler2);
+
+      // Act
+      await eventBus.publish(expectedAlphaEvent);
+
+      // Assert
+      expect(handler1).toHaveBeenCalledWith(expectedAlphaEvent);
+      expect(handler2).toHaveBeenCalledWith(expectedAlphaEvent);
+    });
+
     test('should only call the subscribed handler', async () => {
       // Arrange
       const eventBus = new EventEmitterEventBus();
       const expectedAlphaEvent = new TestAlphaEvent();
-      const expectedBetaEvent = new TestBetaEvent();
 
       const alphaHandler = jest.fn();
       const betaHandler = jest.fn();

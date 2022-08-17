@@ -1,6 +1,11 @@
 export abstract class DomainEvent {
-  dateTimeOccurred: Date;
+  private readonly _dateTimeOccurred: Date;
+
+  get dateTimeOccurred() {
+    return this._dateTimeOccurred;
+  }
+  
   constructor() {
-    this.dateTimeOccurred = new Date();
+    this._dateTimeOccurred = new Date();
   }
 }
