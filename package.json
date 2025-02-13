@@ -20,7 +20,7 @@
   "homepage": "https://github.com/kenfdev/eventemitter-poc#readme",
   "devDependencies": {
     "@types/jest": "28.1.8",
-    "@types/node": "18.19.75",
+    "@types/node": "18.19.76",
     "@types/uuid": "8.3.4",
     "nodemon": "2.0.22",
     "ts-jest": "28.0.8",
