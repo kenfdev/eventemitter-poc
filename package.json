@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/kenfdev/eventemitter-poc#readme",
   "devDependencies": {
-    "@types/jest": "28.1.8",
+    "@types/jest": "30.0.0",
     "@types/node": "18.19.129",
     "@types/uuid": "8.3.4",
     "nodemon": "2.0.22",
-    "ts-jest": "28.0.8",
+    "ts-jest": "29.4.4",
     "ts-node": "10.9.2",
     "typescript": "4.9.5"
   },
